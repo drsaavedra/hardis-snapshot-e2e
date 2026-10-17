@@ -114,6 +114,10 @@ for start in range(0, CLASSES, TESTED_PER_CLASS):
     ks = range(start, min(CLASSES, start + TESTED_PER_CLASS))
     body = "".join(f"        Assert.areEqual(5, {svc(k)}.run('t{k:04d}'));\n" for k in ks)
     body += "".join(f"        Assert.isTrue({svc(k)}.chain(null));\n" for k in ks if k)
+    # Only 300 services have a trigger: call handle() directly on an unsaved record so every service is covered
+    body += "".join(f"        {obj(k % OBJECTS)} h{k:04d} = new {obj(k % OBJECTS)}(Name = 'h{k:04d}');\n"
+                    f"        {svc(k)}.handle(new List<SObject>{{ h{k:04d} }});\n"
+                    f"        Assert.areEqual('h{k:04d}', h{k:04d}.{fld(0)});\n" for k in ks)
     # Inserting one record per object fires its trigger, which calls the service's handle()
     body += "".join(f"        insert new {obj(k)}(Name = 'r{k:04d}');\n" for k in ks if k < OBJECTS)
     write(ROOT / "classes" / f"BenchServiceTest{tests:02d}.cls",
