@@ -9,6 +9,8 @@ on:
     # Add your major branches names here
     branches:
       - main
+      - bench
+      - bench-control
 permissions: read-all
 name: Simulate Deployment (sfdx-hardis)
 
