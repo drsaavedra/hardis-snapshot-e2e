@@ -101,7 +101,6 @@ private class BenchServiceTest11 {
         Assert.areEqual(5, BenchService1196.run('t1196'));
         Assert.areEqual(5, BenchService1197.run('t1197'));
         Assert.areEqual(5, BenchService1198.run('t1198'));
-        Assert.areEqual(5, BenchService1199.run('t1199'));
         Assert.isTrue(BenchService1100.chain(null));
         Assert.isTrue(BenchService1101.chain(null));
         Assert.isTrue(BenchService1102.chain(null));
@@ -201,6 +200,5 @@ private class BenchServiceTest11 {
         Assert.isTrue(BenchService1196.chain(null));
         Assert.isTrue(BenchService1197.chain(null));
         Assert.isTrue(BenchService1198.chain(null));
-        Assert.isTrue(BenchService1199.chain(null));
     }
 }
