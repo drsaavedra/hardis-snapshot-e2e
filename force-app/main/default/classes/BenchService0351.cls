@@ -1,0 +1,14 @@
+public with sharing class BenchService0351 {
+    public static Integer run(String label) {
+        Bench051__c rec = new Bench051__c(Name = label, F00_Text__c = label);
+        return rec.Name.length();
+    }
+    public static void handle(List<SObject> records) {
+        for (SObject record : records) {
+            record.put('F00_Text__c', String.valueOf(record.get('Name')));
+        }
+    }
+    public static Boolean chain(BenchService0350 previous) {
+        return previous == null;
+    }
+}
