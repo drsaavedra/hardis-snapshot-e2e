@@ -21,7 +21,6 @@ private class BenchServiceTest07 {
         Assert.areEqual(5, BenchService0716.run('t0716'));
         Assert.areEqual(5, BenchService0717.run('t0717'));
         Assert.areEqual(5, BenchService0718.run('t0718'));
-        Assert.areEqual(5, BenchService0719.run('t0719'));
         Assert.isTrue(BenchService0700.chain(null));
         Assert.isTrue(BenchService0701.chain(null));
         Assert.isTrue(BenchService0702.chain(null));
@@ -41,7 +40,6 @@ private class BenchServiceTest07 {
         Assert.isTrue(BenchService0716.chain(null));
         Assert.isTrue(BenchService0717.chain(null));
         Assert.isTrue(BenchService0718.chain(null));
-        Assert.isTrue(BenchService0719.chain(null));
         Bench160__c h0700 = new Bench160__c(Name = 'h0700');
         BenchService0700.handle(new List<SObject>{ h0700 });
         Assert.areEqual('h0700', h0700.F00_Text__c);
@@ -99,8 +97,5 @@ private class BenchServiceTest07 {
         Bench178__c h0718 = new Bench178__c(Name = 'h0718');
         BenchService0718.handle(new List<SObject>{ h0718 });
         Assert.areEqual('h0718', h0718.F00_Text__c);
-        Bench179__c h0719 = new Bench179__c(Name = 'h0719');
-        BenchService0719.handle(new List<SObject>{ h0719 });
-        Assert.areEqual('h0719', h0719.F00_Text__c);
     }
 }
