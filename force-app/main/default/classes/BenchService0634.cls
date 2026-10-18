@@ -1,6 +1,6 @@
 public with sharing class BenchService0634 {
     public static Integer run(String label) {
-        Bench034__c rec = new Bench034__c(Name = label, F00_Text__c = label);
+        Bench094__c rec = new Bench094__c(Name = label, F00_Text__c = label);
         return rec.Name.length();
     }
     public static void handle(List<SObject> records) {
