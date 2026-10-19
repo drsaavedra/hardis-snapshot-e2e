@@ -400,7 +400,6 @@
         <members>BenchService396</members>
         <members>BenchService397</members>
         <members>BenchService398</members>
-        <members>BenchService399</members>
         <members>BenchServiceTest</members>
         <members>Greeter</members>
         <members>GreeterTest</members>
@@ -437,6 +436,8 @@
         <members>Bench001__c.F12_Picklist__c</members>
         <members>Bench001__c.F13_LongTextArea__c</members>
         <members>Bench001__c.F14_Currency__c</members>
+        <members>Bench001__c.Owner_Note__c</members>
+        <members>Bench001__c.Region__c</members>
         <members>Bench002__c.F00_Text__c</members>
         <members>Bench002__c.F01_Number__c</members>
         <members>Bench002__c.F02_Checkbox__c</members>
