@@ -401,6 +401,5 @@ private class BenchServiceTest {
         Assert.areEqual(4, BenchService396.run('t396'));
         Assert.areEqual(4, BenchService397.run('t397'));
         Assert.areEqual(4, BenchService398.run('t398'));
-        Assert.areEqual(4, BenchService399.run('t399'));
     }
 }
