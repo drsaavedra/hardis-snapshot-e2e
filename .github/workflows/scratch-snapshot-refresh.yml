@@ -56,9 +56,9 @@ jobs:
           # Dev Hub authentication: keep the variables matching the way your Dev Hub is authenticated,
           # and replace DEVHUB by the alias of your Dev Hub
           SFDX_AUTH_URL_DEV_HUB: ${{ secrets.SFDX_AUTH_URL_DEV_HUB }}
-          SFDX_CLIENT_ID_DEVHUB: ${{ secrets.SFDX_CLIENT_ID_DEVHUB }}
-          SFDX_CLIENT_KEY_DEVHUB: ${{ secrets.SFDX_CLIENT_KEY_DEVHUB }}
-          SFDX_CLIENT_CERT_DEVHUB: ${{ secrets.SFDX_CLIENT_CERT_DEVHUB }} # TEST ONLY: raw PEM key
+          SFDX_CLIENT_ID_DEVHUB2: ${{ secrets.SFDX_CLIENT_ID_DEVHUB2 }}
+          SFDX_CLIENT_KEY_DEVHUB2: ${{ secrets.SFDX_CLIENT_KEY_DEVHUB2 }}
+          SFDX_CLIENT_CERT_DEVHUB2: ${{ secrets.SFDX_CLIENT_CERT_DEVHUB2 }}
           SCRATCH_ORG_SNAPSHOT_WAIT: ${{ vars.SCRATCH_ORG_SNAPSHOT_WAIT || '60' }}
           CI_COMMIT_REF_NAME: ${{ env.BRANCH }} # The branch whose snapshot is refreshed
           FORCE_COLOR: "1"

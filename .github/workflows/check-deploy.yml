@@ -13,6 +13,9 @@ on:
       - bench-control
       - bench3651
       - bench3651-control
+      - hub2-refused
+      - hub2-deploy
+      - hub2-deploy-control
 permissions: read-all
 name: Simulate Deployment (sfdx-hardis)
 
@@ -41,9 +44,9 @@ jobs:
       # Dev Hub authentication: keep the variables matching the way your Dev Hub is authenticated,
       # and replace DEVHUB by the alias of your Dev Hub
       SFDX_AUTH_URL_DEV_HUB: ${{ secrets.SFDX_AUTH_URL_DEV_HUB }}
-      SFDX_CLIENT_ID_DEVHUB: ${{ secrets.SFDX_CLIENT_ID_DEVHUB }}
-      SFDX_CLIENT_KEY_DEVHUB: ${{ secrets.SFDX_CLIENT_KEY_DEVHUB }}
-      SFDX_CLIENT_CERT_DEVHUB: ${{ secrets.SFDX_CLIENT_CERT_DEVHUB }} # TEST ONLY: raw PEM key
+      SFDX_CLIENT_ID_DEVHUB2: ${{ secrets.SFDX_CLIENT_ID_DEVHUB2 }}
+      SFDX_CLIENT_KEY_DEVHUB2: ${{ secrets.SFDX_CLIENT_KEY_DEVHUB2 }}
+      SFDX_CLIENT_CERT_DEVHUB2: ${{ secrets.SFDX_CLIENT_CERT_DEVHUB2 }}
       # Key that decrypts the scratch orgs of a pool stored in the git provider
       SFDX_HARDIS_POOL_ENCRYPTION_KEY: ${{ secrets.SFDX_HARDIS_POOL_ENCRYPTION_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

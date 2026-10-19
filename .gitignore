@@ -1,3 +1,12 @@
 config/user/
 .sf/
 .sfdx/
+.cache/
+hardis-report/
+tmp/
+**/__tests__/**
+**/cleanDataServices/
+**/siteDotComSites/*.site
+**/data/**/source/**
+**/data/**/target/**
+force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml
