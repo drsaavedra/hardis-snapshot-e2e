@@ -11,6 +11,8 @@ on:
       - main
       - bench
       - bench-control
+      - bench3651
+      - bench3651-control
 permissions: read-all
 name: Simulate Deployment (sfdx-hardis)
 
