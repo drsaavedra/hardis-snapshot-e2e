@@ -61,6 +61,7 @@ jobs:
           SFDX_CLIENT_CERT_DEVHUB2: ${{ secrets.SFDX_CLIENT_CERT_DEVHUB2 }}
           SCRATCH_ORG_SNAPSHOT_WAIT: ${{ vars.SCRATCH_ORG_SNAPSHOT_WAIT || '60' }}
           CI_COMMIT_REF_NAME: ${{ env.BRANCH }} # The branch whose snapshot is refreshed
+          CI_SCRATCH_MODE: deploy # TEST ONLY: deploy mode with manifest/package.xml
           FORCE_COLOR: "1"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"

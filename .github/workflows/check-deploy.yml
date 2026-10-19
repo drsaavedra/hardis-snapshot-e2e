@@ -55,6 +55,7 @@ jobs:
       SFDX_TEST_WAIT_MINUTES: ${{ vars.SFDX_TEST_WAIT_MINUTES || '120' }}
       # Target branch, to find its scratch org snapshot (useScratchOrgSnapshot, see scratch-snapshot-refresh.yml)
       FORCE_TARGET_BRANCH: ${{ github.base_ref }}
+      CI_SCRATCH_MODE: deploy # TEST ONLY: deploy mode with manifest/package.xml
       FORCE_COLOR: "1"
     steps:
       - name: Checkout code
@@ -78,6 +79,9 @@ jobs:
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           sf hardis:auth:login --devhub
           sf hardis:scratch:create
+      # TEST ONLY: did the post-deployment command run in this scratch org, or come with the snapshot
+      - name: Count post-deployment markers
+        run: sf data query --query "SELECT COUNT() FROM Account WHERE Name = 'PostDeployMarker'" || true
       - name: Run Apex tests
         run: |
           sleep 120 # A scratch org that was just created can be not ready yet

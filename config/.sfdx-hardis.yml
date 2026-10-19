@@ -3,3 +3,11 @@ devHubAlias: DevHub2
 devHubUsername: daverenaldsaavedra.6a4db9d2b0ce@agentforce.com
 devHubInstanceUrl: https://orgfarm-d57d951406-dev-ed.develop.my.salesforce.com
 userEmail: dsaavedra@pogi.com.ph
+useDeltaDeploymentWithDependencies: true
+commandsPostDeploy:
+  - id: 5c0e3f7a-2d41-4b8e-9a6f-1e7d3c2b9a10
+    label: Create a post-deployment marker
+    type: command
+    command: sf data create record --sobject Account --values "Name='PostDeployMarker'" --json
+    context: all
+    runOnlyOnceByOrg: false
