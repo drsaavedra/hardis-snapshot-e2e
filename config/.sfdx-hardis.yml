@@ -3,3 +3,9 @@ devHubAlias: DevHub
 devHubUsername: dsaavedra@pogi.com.ph
 devHubInstanceUrl: https://login.salesforce.com
 userEmail: dsaavedra@pogi.com.ph
+installedPackages:
+  - SubscriberPackageName: HardisSnapshotPkg
+    SubscriberPackageVersionId: 04tg5000000FfXVAA0
+    SubscriberPackageVersionName: ver 0.1
+    installOnScratchOrgs: true
+    installDuringDeployments: false
