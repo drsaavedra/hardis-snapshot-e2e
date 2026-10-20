@@ -2,7 +2,7 @@
 
 Test repository for the sfdx-hardis Pull Request that creates Pull Request scratch orgs from a snapshot of their target branch (`useScratchOrgSnapshot`). The CI jobs install sfdx-hardis from the branch [`feat/scratch-org-snapshot`](https://github.com/drsaavedra/sfdx-hardis/tree/feat/scratch-org-snapshot), not from npm.
 
-It is a throwaway: not maintained, and deleted once the Pull Request is merged.
+It is a throwaway: not maintained.
 
 ## What is here
 
