@@ -1,3 +1,3 @@
 public with sharing class Greeter {
-    public static String greet() { return 'feature'; }
+    public static String greet() { return 'pool'; }
 }
