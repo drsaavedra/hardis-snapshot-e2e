@@ -62,6 +62,10 @@ jobs:
           SFDX_CLIENT_ID_DEVHUB: ${{ secrets.SFDX_CLIENT_ID_DEVHUB }}
           SFDX_CLIENT_KEY_DEVHUB: ${{ secrets.SFDX_CLIENT_KEY_DEVHUB }}
           SFDX_CLIENT_CERT_DEVHUB: ${{ secrets.SFDX_CLIENT_CERT_DEVHUB }} # TEST ONLY: raw PEM key
+          # TEST ONLY: second Dev Hub (devHubAlias DevHub2)
+          SFDX_CLIENT_ID_DEVHUB2: ${{ secrets.SFDX_CLIENT_ID_DEVHUB2 }}
+          SFDX_CLIENT_KEY_DEVHUB2: ${{ secrets.SFDX_CLIENT_KEY_DEVHUB2 }}
+          SFDX_CLIENT_CERT_DEVHUB2: ${{ secrets.SFDX_CLIENT_CERT_DEVHUB2 }}
           # Key that encrypts the scratch orgs of a pool stored in the git provider
           SFDX_HARDIS_POOL_ENCRYPTION_KEY: ${{ secrets.SFDX_HARDIS_POOL_ENCRYPTION_KEY }}
           # Only during a key rotation: the key the pool had before
