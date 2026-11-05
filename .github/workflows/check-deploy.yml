@@ -9,6 +9,7 @@ on:
     # Add your major branches names here
     branches:
       - main
+      - b1-target # B1 break 4: a target branch that lacks the commit of the pool org
 permissions: read-all
 name: Simulate Deployment (sfdx-hardis)
 
