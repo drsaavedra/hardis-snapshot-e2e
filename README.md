@@ -1,6 +1,6 @@
 # hardis-snapshot-e2e
 
-Test repository for the sfdx-hardis Pull Request that creates Pull Request scratch orgs from a snapshot of their target branch (`useScratchOrgSnapshot`). The CI jobs install sfdx-hardis from the branch [`feat/scratch-org-snapshot`](https://github.com/drsaavedra/sfdx-hardis/tree/feat/scratch-org-snapshot), not from npm.
+Test repository for the sfdx-hardis Pull Request that creates Pull Request scratch orgs from a snapshot of their target branch (`useScratchOrgSnapshot`). The CI jobs install sfdx-hardis from the branch [`e2e/cloudity-review`](https://github.com/drsaavedra/sfdx-hardis/tree/e2e/cloudity-review), not from npm. That branch is the Pull Request branch plus the answers to the review, not yet pushed to the Pull Request.
 
 It is a throwaway: not maintained.
 

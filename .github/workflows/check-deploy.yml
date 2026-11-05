@@ -46,8 +46,6 @@ jobs:
       # Set the repository variable CI_DELETE_SCRATCH_ORG to "false" only to investigate issues
       CI_DELETE_SCRATCH_ORG: ${{ vars.CI_DELETE_SCRATCH_ORG || 'true' }}
       SFDX_TEST_WAIT_MINUTES: ${{ vars.SFDX_TEST_WAIT_MINUTES || '120' }}
-      # Target branch, to find its scratch org snapshot (useScratchOrgSnapshot, see scratch-snapshot-refresh.yml)
-      FORCE_TARGET_BRANCH: ${{ github.base_ref }}
       FORCE_COLOR: "1"
     steps:
       - name: Checkout code
@@ -57,9 +55,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
       # TEST ONLY: install the sfdx-hardis branch under test over the released plugin of the image
-      - name: Install sfdx-hardis from feat/scratch-org-snapshot
+      - name: Install sfdx-hardis from e2e/cloudity-review
         run: |
-          git clone --depth 1 --branch feat/scratch-org-snapshot https://github.com/drsaavedra/sfdx-hardis.git /tmp/sfdx-hardis
+          git clone --depth 1 --branch e2e/cloudity-review https://github.com/drsaavedra/sfdx-hardis.git /tmp/sfdx-hardis
           cd /tmp/sfdx-hardis
           npx --yes yarn@1.22.22 install --frozen-lockfile --ignore-scripts --network-timeout 600000
           npx tsc -p .

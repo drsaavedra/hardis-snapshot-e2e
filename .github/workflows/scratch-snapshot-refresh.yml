@@ -39,18 +39,18 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       # TEST ONLY: install the sfdx-hardis branch under test over the released plugin of the image
-      - name: Install sfdx-hardis from feat/scratch-org-snapshot
+      - name: Install sfdx-hardis from e2e/cloudity-review
         run: |
-          git clone --depth 1 --branch feat/scratch-org-snapshot https://github.com/drsaavedra/sfdx-hardis.git /tmp/sfdx-hardis
+          git clone --depth 1 --branch e2e/cloudity-review https://github.com/drsaavedra/sfdx-hardis.git /tmp/sfdx-hardis
           cd /tmp/sfdx-hardis
           npx --yes yarn@1.22.22 install --frozen-lockfile --ignore-scripts --network-timeout 600000
           npx tsc -p .
           sf plugins link /tmp/sfdx-hardis --no-install
           sf hardis:scratch:snapshot:refresh --help > /dev/null
           echo "sfdx-hardis from the branch is linked"
-      # Set env branch variable (github.ref_name seems to not work)
+      # Set env branch variable, keeping the slashes of a branch like release/1.0
       - name: Set env.BRANCH
-        run: echo "BRANCH=$(echo "$GITHUB_REF" | cut -d'/' -f 3)" >> "$GITHUB_ENV"
+        run: echo "BRANCH=${GITHUB_REF#refs/heads/}" >> "$GITHUB_ENV"
       - name: Login & refresh scratch org snapshot
         env:
           # Dev Hub authentication: keep the variables matching the way your Dev Hub is authenticated,
@@ -64,7 +64,6 @@ jobs:
           FORCE_COLOR: "1"
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          sf hardis:auth:login --devhub
           sf hardis:scratch:snapshot:refresh
 
       - name: Archive sfdx-hardis reports
