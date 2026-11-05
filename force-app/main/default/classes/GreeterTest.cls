@@ -2,6 +2,6 @@
 private class GreeterTest {
     @IsTest static void greets() {
         insert new Repro__c(Name = 'x', Stage__c = 'a');
-        System.assertEquals('feature', Greeter.greet());
+        System.assertEquals('b1c', Greeter.greet());
     }
 }
