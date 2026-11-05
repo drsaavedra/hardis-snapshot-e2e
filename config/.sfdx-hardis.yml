@@ -5,4 +5,4 @@ devHubInstanceUrl: https://orgfarm-d57d951406-dev-ed.develop.my.salesforce.com
 userEmail: dsaavedra@pogi.com.ph
 poolConfig:
   storageService: gitProvider
-  maxScratchOrgsNumber: 2
+  maxScratchOrgsNumber: 1
